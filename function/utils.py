@@ -1,23 +1,33 @@
-import os
-from googleapiclient.discovery import build
 from data.class_chanell import Channel
 
-# API_KEY скопирован из гугла и вставлен в переменные окружения
-api_key: str = os.getenv('API_KEY')
+n1 = Node(5, None)
+n2 = Node('a', n1)
+print(n1.data)
+print(n2.data)
+print(n1)
+print(n2.next_node)
+# Результаты вывода в консоли
+5
+a
+<__main__.Node object at 0x0000022803036050>
+<__main__.Node object at 0x0000022803036050>
 
-# создать специальный объект для работы с API
-youtube = build('youtube', 'v3', developerKey=api_key)
-
-# print(youtube)
-channel_id = 'UCMCgOm8GZkHp8zJ6l7_hIuA'
-vdud = Channel(youtube, channel_id)
-vdud.print_info()
-
-
-#channel_id = 'UCMCgOm8GZkHp8zJ6l7_hIuA'  # вДудь
-
-# channel_id = 'UC1eFXmJNkjITxPFWTy6RsWg'    # Редакция
-#
-# channel = youtube.channels().list(id=channel_id, part='snippet,statistics').execute()
-#
-# print(json.dumps(channel, indent=2, ensure_ascii=False))
+stack = Stack()
+stack.push('data1')
+stack.push('data2')
+stack.push('data3')
+print(stack.top.data)
+print(stack.top.next_node.data)
+print(stack.top.next_node.next_node.data)
+print(stack.top.next_node.next_node.next_node)
+print(stack.top.next_node.next_node.next_node.data)
+# Результаты вывода в консоли
+data3
+data2
+data1
+None
+Traceback (most recent call last):
+  File "-//-//-", line 29, in <module>
+    print(stack.top.next_node.next_node.next_node.data)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'data'
