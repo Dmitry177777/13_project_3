@@ -1,16 +1,14 @@
-from data.class_chanell import Channel
+from data.class_node_stack import Node
+from data.class_node_stack import Stack
 
-n1 = Node(5, None)
-n2 = Node('a', n1)
+n1 = Node(5)
+n2 = Node('a')
 print(n1.data)
 print(n2.data)
 print(n1)
 print(n2.next_node)
-# Результаты вывода в консоли
-5
-a
-<__main__.Node object at 0x0000022803036050>
-<__main__.Node object at 0x0000022803036050>
+
+
 
 stack = Stack()
 stack.push('data1')
@@ -21,13 +19,7 @@ print(stack.top.next_node.data)
 print(stack.top.next_node.next_node.data)
 print(stack.top.next_node.next_node.next_node)
 print(stack.top.next_node.next_node.next_node.data)
-# Результаты вывода в консоли
-data3
-data2
-data1
-None
-Traceback (most recent call last):
-  File "-//-//-", line 29, in <module>
-    print(stack.top.next_node.next_node.next_node.data)
-          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-AttributeError: 'NoneType' object has no attribute 'data'
+
+
+
+
