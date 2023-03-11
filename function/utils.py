@@ -11,9 +11,13 @@ print(n2.next_node)
 stack = Stack()
 stack.push('data1')
 stack.push('data2')
-stack.push('data3')
+
+data = stack.pop()
+
+# теперь последний элемента содержит данные data1
 print(stack.top.data)
-print(stack.top.next_node.data)
-print(stack.top.next_node.next_node.data)
-print(stack.top.next_node.next_node.next_node)
-print(stack.top.next_node.next_node.next_node.data)
+# 'data1'
+
+# данные удаленного элемента
+print(data)
+# 'data2'
