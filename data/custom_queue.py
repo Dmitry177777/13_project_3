@@ -1,5 +1,3 @@
-from data.class_node_stack import Stack
-
 class EmptyStackException(Exception):
     pass
 
@@ -11,24 +9,33 @@ class Node():
         self.data = element
         self.next_node = next_node
 
+    def __str__(self):
+        if self.data:
+            return self.data.__str__()
+        else:
+            return 'Empty Node'
+
+    def __repr__(self):
+        return self.__str__()
+
+
 class Queue():
-    """"Класс СТЭКА 2"""
+    """"Класс очереди"""
 
     def __init__(self):
-        self.head = None
-        self.tail = None
-        self.size = 0
+        self.data = None
+        self.head = 0
+        self.tail = 0
 
     def enqueue(self, data):
-        self.head = Node(data, self.top)
-        self.tail =
-        self.size += 1
+        self.data = Node(data, self.data)
+        self.tail += 1
 
-    def pop(self):
-        if self.head:
-            val = self.head.data
-            self.top = self.head.next_node
-            self.size -= 1
-            return val
-        else:
-            raise EmptyStackException
+    # def pop(self):
+    #     if self.head:
+    #         val = self.head.data
+    #         self.head = self.head.next_node
+    #         self.size -= 1
+    #         return val
+    #     else:
+    #         raise EmptyStackException
