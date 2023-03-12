@@ -1,6 +1,3 @@
-class EmptyStackException(Exception):
-    pass
-
 
 class Node():
     """"Класс узла"""
@@ -8,6 +5,7 @@ class Node():
     def __init__(self, element=None, next_node=None):
         self.data = element
         self.next_node = next_node
+
 
     def __str__(self):
         if self.data:
@@ -19,23 +17,54 @@ class Node():
         return self.__str__()
 
 
-class Queue():
-    """"Класс очереди"""
+class Queue(object):
+    "Цепная очередь"
 
     def __init__(self):
-        self.data = None
-        self.head = 0
-        self.tail = 0
+        self.head = Node()
+        self.tail = Node()
+        self.length = 0
 
-    def enqueue(self, data):
-        self.data = Node(data, self.data)
-        self.tail += 1
+    def get_length(self):
+        "Получи длину"
+        return self.length
 
-    # def pop(self):
-    #     if self.head:
-    #         val = self.head.data
-    #         self.head = self.head.next_node
-    #         self.size -= 1
-    #         return val
+    def is_empty(self):
+        "Судите, пусто ли оно"
+        if self.length == 0:
+            return True
+        return False
+
+    def enqueue(self, elem):
+        "Операция входа"
+
+        tmp = Node(elem)
+        if self.is_empty():
+            self.head = tmp
+            self.tail = tmp
+        else:
+            self.tail.next_node = tmp
+            self.tail = tmp
+        self.length += 1
+
+    # def de_queue(self):
+    #     "Операция Dequeue"
+    #     if self.is_empty():
+    #         raise ValueError("LKQueue is empty!")
     #     else:
-    #         raise EmptyStackException
+    #         del_elem = self.head.data
+    #         self.head = self.head.next_node
+    #         self.length -= 1
+    #         return del_elem
+    #
+    # def show_queue(self):
+    #     "Показать очередь"
+    #     if self.is_empty():
+    #         raise ValueError("LKQueue is empty!")
+    #
+    #     j = self.length
+    #     tmp = self.head
+    #     while j > 0:
+    #         print(tmp.data)
+    #         tmp = tmp.next
+    #         j -= 1
