@@ -30,3 +30,5 @@ class Stack():
         else:
             raise EmptyStackException
 
+    def __str__(self):
+        return f'{self.top.data}'

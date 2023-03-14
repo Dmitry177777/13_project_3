@@ -13,7 +13,7 @@ print(data)
 # 'data1'
 
 
-stack = Stack()
+# stack = Stack()
 stack.push('data1')
 stack.push('data2')
 data = stack.pop()
