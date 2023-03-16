@@ -9,6 +9,12 @@ class Node():
         self.data = element
         self.next_node = next_node
 
+    def __str__(self):
+        return self.data
+
+    def __repr__(self):
+        return self.__str__()
+
 
 class Stack():
     """"Класс СТЭКА"""
