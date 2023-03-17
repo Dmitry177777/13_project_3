@@ -47,16 +47,17 @@ class Queue(object):
             self.tail = tmp
         self.length += 1
 
-    # def de_queue(self):
-    #     "Операция Dequeue"
-    #     if self.is_empty():
-    #         raise ValueError("LKQueue is empty!")
-    #     else:
-    #         del_elem = self.head.data
-    #         self.head = self.head.next_node
-    #         self.length -= 1
-    #         return del_elem
-    #
+    def dequeue(self):
+        "Операция Dequeue"
+        if self.is_empty():
+            return None
+        else:
+            del_elem = self.head.data
+            self.head = self.head.next_node
+            self.length -= 1
+            return del_elem
+
+
     # def show_queue(self):
     #     "Показать очередь"
     #     if self.is_empty():
