@@ -15,9 +15,6 @@ print(queue.dequeue())
 # None
 
 
-
-
-
 # print(queue.head.data)
 # print(queue.head.next_node.data)
 # print(queue.tail.data)

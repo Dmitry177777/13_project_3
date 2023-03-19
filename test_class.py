@@ -32,15 +32,11 @@ class TestQueue(unittest.TestCase):
         assert self.queue.tail.data == 'data3'
         assert self.queue.tail.next_node is None
 
-
     def test_queue_dequeue(self):
-
-        self.queue.dequeue() == 'data1'
-        self.queue.dequeue() == 'data2'
-        self.queue.dequeue() == 'data3'
-        self.queue.dequeue() == None
-
-
+        assert self.queue.dequeue() == 'data1'
+        assert self.queue.dequeue() == 'data2'
+        assert self.queue.dequeue() == 'data3'
+        assert self.queue.dequeue() == None
 
 
 if __name__ == '__main__':

@@ -57,7 +57,6 @@ class Queue(object):
             self.length -= 1
             return del_elem
 
-
     # def show_queue(self):
     #     "Показать очередь"
     #     if self.is_empty():
