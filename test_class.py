@@ -2,6 +2,7 @@ import unittest
 
 import data.class_node_stack as am
 import data.custom_queue as at
+import data.linked_list as ap
 
 
 class TestStack(unittest.TestCase):
@@ -37,6 +38,20 @@ class TestQueue(unittest.TestCase):
         assert self.queue.dequeue() == 'data2'
         assert self.queue.dequeue() == 'data3'
         assert self.queue.dequeue() == None
+
+
+class LinkedList(unittest.TestCase):
+
+    def setUp(self):
+        self.list = ap.LinkedList()
+        self.list.insert_beginning({'id': 1})
+        self.list.insert_at_end({'id': 2})
+        self.list.insert_at_end({'id': 3})
+        self.list.insert_beginning({'id': 0})
+
+    def test_list_print_ll(self):
+        ll_string: str = " {'id': 0} -> {'id': 1} -> {'id': 2} -> {'id': 3} -> None"
+        assert self.list.print_ll() == ll_string
 
 
 if __name__ == '__main__':
