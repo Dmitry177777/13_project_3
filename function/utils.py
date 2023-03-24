@@ -1,18 +1,27 @@
-from data.custom_queue import Queue
+from data.linked_list import LinkedList
 
-queue = Queue()
-queue.enqueue('data1')
-queue.enqueue('data2')
-queue.enqueue('data3')
+ll = LinkedList()
+ll.insert_beginning({'id': 1})
+ll.insert_at_end({'id': 2})
+ll.insert_at_end({'id': 3})
+ll.insert_beginning({'id': 0})
+ll.print_ll()
+# {'id': 0} -> {'id': 1} -> {'id': 2} -> {'id': 3} -> None
 
-print(queue.dequeue())
-# data1
-print(queue.dequeue())
-# data2
-print(queue.dequeue())
-# data3
-print(queue.dequeue())
-# None
+# ll.show_LinkedList()
+# queue = Queue()
+# queue.enqueue('data1')
+# queue.enqueue('data2')
+# queue.enqueue('data3')
+#
+# print(queue.dequeue())
+# # data1
+# print(queue.dequeue())
+# # data2
+# print(queue.dequeue())
+# # data3
+# print(queue.dequeue())
+# # None
 
 
 # print(queue.head.data)
