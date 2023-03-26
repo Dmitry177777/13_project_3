@@ -18,6 +18,7 @@ for item in lst: print(item)
 # get_data_by_id()
 user_data = ll.get_data_by_id(3)
 print(user_data)
+print(ll.to_list())
 # {'id': 3, 'username': 'mosh_s'}
 user_data = ll.get_data_by_id(1)
 print(user_data)

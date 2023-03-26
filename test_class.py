@@ -49,9 +49,27 @@ class LinkedList(unittest.TestCase):
         self.list.insert_at_end({'id': 3})
         self.list.insert_beginning({'id': 0})
 
+        self.list1 = ap.LinkedList()
+        self.list1.insert_beginning({'id': 7, 'username': 'lazzy508509'})
+        self.list1.insert_at_end({'id': 6, 'username': 'mik.roz'})
+        self.list1.insert_at_end({'id': 5, 'username': 'mosh_s'})
+        self.list1.insert_beginning({'id': 4, 'username': 'serebro'})
+
     def test_list_print_ll(self):
         ll_string: str = " {'id': 0} -> {'id': 1} -> {'id': 2} -> {'id': 3} -> None"
         assert self.list.print_ll() == ll_string
+
+    def test_list_to_list(self):
+        ll_list = [{'id': 4, 'username': 'serebro'}, {'id': 7, 'username': 'lazzy508509'},
+                   {'id': 6, 'username': 'mik.roz'}, {'id': 5, 'username': 'mosh_s'}]
+
+        assert self.list1.to_list() == ll_list
+
+    def test_list_get_data_by_id(self):
+        assert self.list1.get_data_by_id(4) == {'id': 4, 'username': 'serebro'}
+        assert self.list1.get_data_by_id(5) == {'id': 5, 'username': 'mosh_s'}
+        assert self.list1.get_data_by_id(6) == {'id': 6, 'username': 'mik.roz'}
+        assert self.list1.get_data_by_id(7) == {'id': 7, 'username': 'lazzy508509'}
 
 
 if __name__ == '__main__':

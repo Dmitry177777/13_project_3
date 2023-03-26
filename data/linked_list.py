@@ -58,7 +58,6 @@ class LinkedList():
         node = self.head
         ll_id = {}
         try:
-
             while node:
                 node = node.next
                 # print(node.data)
