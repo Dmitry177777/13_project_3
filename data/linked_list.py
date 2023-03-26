@@ -18,6 +18,8 @@ class Node():
 class LinkedList():
     "дносвязный список"
 
+    head = None
+
     def __init__(self):
         self.head = None
 
@@ -37,6 +39,43 @@ class LinkedList():
         while (laste.next):
             laste = laste.next
         laste.next = NewNode
+
+    def to_list(self):
+        """ возврат данные односвязного списка"""
+        ll_list = []
+        node = self.head
+        if node is None:
+            return ll_list
+        while node:
+            ll_list.append(node)
+            node = node.next
+
+        return ll_list
+
+    def get_data_by_id(self, id):
+        """возврат данных по ключу id"""
+
+        node = self.head
+        ll_id = {}
+        try:
+
+            while node:
+                node = node.next
+                # print(node.data)
+                if node.data['id'] == id:
+                    ll_id = node.data
+                    break
+
+        except(TypeError):
+            print('Данные не являются словарем или в словаре нет id')
+            return ""
+        return ll_id
+
+    # # get_data_by_id()
+    # user_data = ll.get_data_by_id(3)
+    # print(user_data)
+    #
+    # # {'id': 3, 'username': 'mosh_s'}
 
     def print_ll(self):
         ll_string = ''

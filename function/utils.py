@@ -1,11 +1,45 @@
 from data.linked_list import LinkedList
 
 ll = LinkedList()
-ll.insert_beginning({'id': 1})
-ll.insert_at_end({'id': 2})
-ll.insert_at_end({'id': 3})
-ll.insert_beginning({'id': 0})
-ll.print_ll()
+
+ll.insert_beginning({'id': 1, 'username': 'lazzy508509'})
+ll.insert_at_end({'id': 2, 'username': 'mik.roz'})
+ll.insert_at_end({'id': 3, 'username': 'mosh_s'})
+ll.insert_beginning({'id': 0, 'username': 'serebro'})
+
+# метод to_list()
+lst = ll.to_list()
+for item in lst: print(item)
+# {'id': 0, 'username': 'serebro'}
+# {'id': 1, 'username': 'lazzy508509'}
+# {'id': 2, 'username': 'mik.roz'}
+# {'id': 3, 'username': 'mosh_s'}
+
+# get_data_by_id()
+user_data = ll.get_data_by_id(3)
+print(user_data)
+# {'id': 3, 'username': 'mosh_s'}
+user_data = ll.get_data_by_id(1)
+print(user_data)
+# {'id': 1, 'username': 'lazzy508509'}
+
+# работа блока try/except
+ll = LinkedList()
+ll.insert_beginning({'id': 1, 'username': 'lazzy508509'})
+ll.insert_at_end('idusername')
+ll.insert_at_end([1, 2, 3])
+ll.insert_at_end({'id': 2, 'username': 'mosh_s'})
+
+user_data = ll.get_data_by_id(2)
+# Данные не являются словарем или в словаре нет id.
+
+
+# ll = LinkedList()
+# ll.insert_beginning({'id': 1})
+# ll.insert_at_end({'id': 2})
+# ll.insert_at_end({'id': 3})
+# ll.insert_beginning({'id': 0})
+# ll.print_ll()
 # {'id': 0} -> {'id': 1} -> {'id': 2} -> {'id': 3} -> None
 
 # ll.show_LinkedList()
