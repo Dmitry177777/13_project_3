@@ -71,12 +71,6 @@ class LinkedList():
             return ""
         return ll_id
 
-    # # get_data_by_id()
-    # user_data = ll.get_data_by_id(3)
-    # print(user_data)
-    #
-    # # {'id': 3, 'username': 'mosh_s'}
-
     def print_ll(self):
         ll_string = ''
         node = self.head
