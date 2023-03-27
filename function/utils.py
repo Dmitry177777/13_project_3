@@ -9,7 +9,8 @@ ll.insert_beginning({'id': 0, 'username': 'serebro'})
 
 # метод to_list()
 lst = ll.to_list()
-for item in lst: print(item)
+# for item in lst: print(item)
+print(lst)
 # {'id': 0, 'username': 'serebro'}
 # {'id': 1, 'username': 'lazzy508509'}
 # {'id': 2, 'username': 'mik.roz'}
@@ -18,7 +19,7 @@ for item in lst: print(item)
 # get_data_by_id()
 user_data = ll.get_data_by_id(3)
 print(user_data)
-print(ll.to_list())
+# print(ll.to_list())
 # {'id': 3, 'username': 'mosh_s'}
 user_data = ll.get_data_by_id(1)
 print(user_data)

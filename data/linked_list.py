@@ -47,6 +47,7 @@ class LinkedList():
         if node is None:
             return ll_list
         while node:
+            # print(node)
             ll_list.append(node)
             node = node.next
 
@@ -59,11 +60,12 @@ class LinkedList():
         ll_id = {}
         try:
             while node:
-                node = node.next
-                # print(node.data)
+
+                # print(node.data['id'])
                 if node.data['id'] == id:
-                    ll_id = node.data
+                    ll_id = node
                     break
+                node = node.next
 
         except(TypeError):
             print('Данные не являются словарем или в словаре нет id')

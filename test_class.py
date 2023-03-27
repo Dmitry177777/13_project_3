@@ -60,16 +60,18 @@ class LinkedList(unittest.TestCase):
         assert self.list.print_ll() == ll_string
 
     def test_list_to_list(self):
-        ll_list = [{'id': 4, 'username': 'serebro'}, {'id': 7, 'username': 'lazzy508509'},
-                   {'id': 6, 'username': 'mik.roz'}, {'id': 5, 'username': 'mosh_s'}]
+        ll_list = [{'id': 4, 'username': 'serebro'},
+                   {'id': 7, 'username': 'lazzy508509'},
+                   {'id': 6, 'username': 'mik.roz'},
+                   {'id': 5, 'username': 'mosh_s'}]
 
-        assert self.list1.to_list() == ll_list
+        assert str(self.list1.to_list()) == str(ll_list)
 
     def test_list_get_data_by_id(self):
-        assert self.list1.get_data_by_id(4) == {'id': 4, 'username': 'serebro'}
-        assert self.list1.get_data_by_id(5) == {'id': 5, 'username': 'mosh_s'}
-        assert self.list1.get_data_by_id(6) == {'id': 6, 'username': 'mik.roz'}
-        assert self.list1.get_data_by_id(7) == {'id': 7, 'username': 'lazzy508509'}
+        assert str(self.list1.get_data_by_id(4)) == str({'id': 4, 'username': 'serebro'})
+        assert str(self.list1.get_data_by_id(7)) == str({'id': 7, 'username': 'lazzy508509'})
+        assert str(self.list1.get_data_by_id(6)) == str({'id': 6, 'username': 'mik.roz'})
+        assert str(self.list1.get_data_by_id(5)) == str({'id': 5, 'username': 'mosh_s'})
 
 
 if __name__ == '__main__':
